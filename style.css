@@ -1,6 +1,8 @@
 @font-face {
   font-family: "Inter Variable";
-  src: local("Inter Variable"), url("/InterVariable.woff2") format("woff");
+  src:
+    local("Inter Variable"),
+    url("/InterVariable.woff2") format("woff");
 }
 
 :root {
@@ -26,6 +28,7 @@
   --m16: calc(16 * var(--var-base));
   --m20: calc(20 * var(--var-base));
   --m30: calc(30 * var(--var-base));
+  --m40: calc(40 * var(--var-base));
 }
 
 html {
@@ -132,14 +135,25 @@ footer {
 .menu {
   display: inline-flex;
   padding: var(--m2) var(--m2) var(--m2) var(--m4);
-  margin-top: var(--m4);
+  position: fixed;
+  z-index: 1234;
+  top: var(--m4);
   align-items: center;
   border-radius: 100px;
-  border: 2px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.03),
-    0px 0.5px 0px 1px rgba(255, 255, 255, 0.3) inset;
-  backdrop-filter: blur(25px);
+  /* border: 2px solid rgba(255, 255, 255, 0.06); */
+  background: radial-gradient(
+    50% 100% at 50% 0.3%,
+    rgba(40, 40, 135, 0.5) 0%,
+    rgba(9, 9, 34, 0.75) 100%
+  );
+  box-shadow:
+    0px 3px 10px -3px rgba(9, 9, 34, 0.4),
+    0px 5px 20px -5px rgba(9, 9, 34, 0.4),
+    0px 10px 40px -10px rgba(9, 9, 34, 0.4),
+    0px 2px 0px 0px rgba(42, 42, 91, 0.75),
+    0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset,
+    0px 0px 1px 0px rgba(255, 255, 255, 0.35) inset;
+  backdrop-filter: blur(50px) saturate(150%);
 }
 
 .button,
@@ -147,7 +161,7 @@ button {
   display: inline-flex;
   font-size: var(--t-s);
   line-height: 1;
-  padding: var(--m3) var(--m4);
+  padding: var(--m3) var(--m5);
   border-radius: 100px;
   border: none;
   background-color: transparent;
@@ -159,8 +173,7 @@ button {
   transition: all 0.2s;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    opacity: 0.9;
+    filter: brightness(125%);
   }
 
   &:active {
@@ -169,23 +182,25 @@ button {
 
   &.size_xl {
     text-align: center;
-    font-size: var(--t-m);
+    font-size: var(--t-xl);
     font-weight: 500;
     border-radius: 100px;
-    padding: var(--m5) var(--m15);
+    padding: var(--m8) var(--m20);
     border-radius: 100px;
     background: radial-gradient(50% 100% at 50% 0.3%, #f3ff71 0%, #a4dd00 100%);
-    box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.2) inset,
+    box-shadow:
+      0px 0px 2px 0px rgba(255, 255, 255, 0.2) inset,
       0px 2px 1px 0px rgba(255, 255, 255, 0.5) inset,
-      0px -2px 1px 0px rgba(255, 255, 255, 0.5) inset, 0px 4px 0px 0px #82b400,
+      0px -1px 1px 0px rgba(255, 255, 255, 0.5) inset,
+      0px 4px 0px 0px #82b400,
       0px 8px 8px -4px rgba(115, 160, 0, 0.3),
-      0px 50px 100px -20px rgba(115, 160, 0, 0.2),
       0px 30px 60px -30px rgba(115, 160, 0, 0.2);
+    /* 0px 50px 100px -20px rgba(115, 160, 0, 0.2), */
   }
 
   &.variant_primary {
     background-color: #e0f30e;
-    color: #090922;
+    color: #021130;
   }
 
   &.variant_primary:hover {
@@ -198,7 +213,7 @@ button {
 }
 
 h1 {
-  font-size: var(--t-xxl);
+  font-size: var(--t-xxxl);
   font-weight: 700;
   line-height: 100%;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -206,6 +221,7 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 0.1em;
 }
 
 h2 {
@@ -213,7 +229,6 @@ h2 {
   font-size: var(--t-xxxl);
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: -5%;
   background: linear-gradient(180deg, #fff 0%, rgba(243, 194, 255, 0.7) 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -296,11 +311,16 @@ section {
 
     gap: var(--m10);
     max-width: 1080px;
-    padding-top: var(--m20);
+    padding-top: var(--m40);
     padding-bottom: var(--m20);
 
     p {
       max-width: 816px;
+      font-size: var(--t-l);
+    }
+
+    h1 + p {
+      margin: -0.4em 0 0.4em;
     }
   }
 
@@ -339,28 +359,32 @@ section {
 
   &.section_example_ekb {
     padding: 0;
-    margin-top: calc(-1 * var(--m20));
+    max-width: initial;
+    max-height: 90vh;
+    margin-top: calc(-1.75 * var(--m30));
     padding-bottom: var(--m20);
     position: relative;
     z-index: 1;
   }
 
   &.section_banner {
+    max-width: initial;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     font-size: 13vw;
-    font-size: clamp(36px, 13vw, 186px);
+    /* font-size: clamp(36px, 13vw, 186px); */
     font-weight: 700;
-    line-height: 100%;
+    line-height: 90%;
     background: linear-gradient(180deg, #fff 0%, rgba(243, 194, 255, 0.9) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: left;
-    padding-bottom: 0;
+    padding: var(--m40) var(--m20) var(--m8);
   }
 
   &.section_visualisaitons {
-    padding-top: var(--m20);
+    max-width: initial;
+    padding: var(--m20) var(--m20) var(--m5);
 
     .cards {
       gap: var(--m4);
@@ -604,10 +628,12 @@ section {
           #f3ff71 0%,
           #a4dd00 100%
         );
-        box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.2) inset,
+        box-shadow:
+          0px 0px 2px 0px rgba(255, 255, 255, 0.2) inset,
           0px 2px 1px 0px rgba(255, 255, 255, 0.5) inset,
-          0px -2px 1px 0px rgba(255, 255, 255, 0.5) inset,
-          0px 4px 0px 0px #82b400, 0px 8px 8px -4px rgba(115, 160, 0, 0.3),
+          0px -1px 1px 0px rgba(255, 255, 255, 0.5) inset,
+          0px 4px 0px 0px #82b400,
+          0px 8px 8px -4px rgba(115, 160, 0, 0.3),
           0px 50px 100px -20px rgba(115, 160, 0, 0.2),
           0px 30px 60px -30px rgba(115, 160, 0, 0.2);
         color: #021130;
@@ -619,10 +645,12 @@ section {
           #3c7fff 0%,
           #0032e5 100%
         );
-        box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.2) inset,
+        box-shadow:
+          0px 0px 2px 0px rgba(255, 255, 255, 0.2) inset,
           0px 2px 1px 0px rgba(255, 255, 255, 0.15) inset,
-          0px -2px 1px 0px rgba(255, 255, 255, 0.15) inset,
-          0px 4px 0px 0px #003cdc, 0px 8px 8px -4px rgba(0, 50, 185, 0.5),
+          0px -1px 1px 0px rgba(255, 255, 255, 0.15) inset,
+          0px 4px 0px 0px #003cdc,
+          0px 8px 8px -4px rgba(0, 50, 185, 0.5),
           0px 50px 100px -20px rgba(0, 50, 185, 0.2),
           0px 30px 60px -30px rgba(0, 50, 185, 0.5);
         color: #fff;
