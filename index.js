@@ -6,5 +6,5 @@ const copyToClipboard = (str) => {
 
 document.querySelector("#js_copy_link").addEventListener("click", function (e) {
   copyToClipboard("sloy.io");
-  e.target.textContent = "✓";
+  e.target.textContent = "Скопировать ссылку sloy.io ✓";
 });
