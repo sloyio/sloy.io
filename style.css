@@ -70,6 +70,7 @@ nav ul {
 h1,
 h2,
 h3,
+h4,
 ul,
 li,
 p {
@@ -92,9 +93,13 @@ p {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
-  color: #e0f30e;
-  border-bottom: 1px solid rgba(224, 243, 14, 0.32);
+  border-bottom: 1px solid rgba(215, 210, 250, 0.15);
+  transition: all 0.15s ease;
+  &:hover {
+    border-bottom: 1px solid rgba(215, 210, 250, 0.3);
+  }
 }
 
 header {
@@ -163,7 +168,7 @@ button {
   line-height: 1;
   padding: var(--m3) var(--m5);
   border-radius: 100px;
-  border: none;
+  border: none !important;
   background-color: transparent;
   cursor: pointer;
   color: white;
@@ -246,11 +251,27 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+h4 {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-size: var(--t-l);
+  font-weight: 600;
+  line-height: 110%;
+  background: linear-gradient(180deg, #fff 0%, rgba(215, 210, 250, 0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .link {
   color: #e0f30e;
   font-size: var(--t-m);
   font-weight: 400;
   line-height: 135%;
+  border-bottom: 1px solid rgba(224, 243, 14, 0.2);
+  &:hover {
+    color: #f3ff70;
+    border-bottom: 1px solid rgba(243, 255, 112, 0.4);
+  }
 }
 
 .cards {
@@ -316,11 +337,12 @@ section {
 
     p {
       max-width: 816px;
-      font-size: var(--t-l);
+      font-size: var(--t-xl);
+      line-height: 125%;
     }
 
     h1 + p {
-      margin: -0.4em 0 0.4em;
+      margin: 0 0 var(--m4);
     }
   }
 
@@ -384,7 +406,7 @@ section {
 
   &.section_visualisaitons {
     max-width: initial;
-    padding: var(--m20) var(--m20) var(--m5);
+    padding: var(--m20) var(--m5) var(--m5);
 
     .cards {
       gap: var(--m4);
@@ -427,7 +449,7 @@ section {
   &.section_users {
     display: flex;
     flex-direction: column;
-    gap: var(--m30);
+    gap: var(--m20);
 
     h2 {
       margin-left: var(--m16);
@@ -444,6 +466,7 @@ section {
       flex-direction: column;
       padding: var(--m8);
       gap: var(--m8);
+      width: 20%;
     }
 
     .card__image {
@@ -528,8 +551,12 @@ section {
   }
 
   &.section_projects {
+    max-width: initial;
+    position: relative;
+
     h2 {
-      margin-left: var(--m20);
+      max-width: 1120px;
+      margin: 0 auto;
     }
 
     .projects {
@@ -541,32 +568,40 @@ section {
       .project {
         display: flex;
         flex-direction: column;
-        gap: var(--m15);
-        margin: 0 var(--m20);
+        gap: var(--m4);
 
-        .project__info {
-          display: grid;
-          gap: var(--m6);
-          grid-template-areas:
-            "project-title project-description"
-            "project-link project-description";
-        }
+        .project__text {
+          max-width: 1120px;
+          display: flex;
+          flex-direction: column;
+          gap: var(--m15);
+          margin: 0 auto;
 
-        .project__link {
-          grid-area: project-link;
-          margin-top: auto;
-        }
+          .project__info {
+            display: grid;
+            gap: var(--m8);
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            grid-template-areas:
+              "project-title project-description"
+              "project-link project-description";
+          }
 
-        .project__title {
-          grid-area: project-title;
-        }
+          .project__link {
+            grid-area: project-link;
+            margin-top: auto;
+          }
 
-        .project__description {
-          grid-area: project-description;
-          color: rgba(215, 210, 250, 0.6);
-          font-size: var(--t-m);
-          font-weight: 400;
-          line-height: 135%;
+          .project__title {
+            grid-area: project-title;
+          }
+
+          .project__description {
+            grid-area: project-description;
+            color: rgba(215, 210, 250, 0.6);
+            font-size: var(--t-m);
+            font-weight: 400;
+            line-height: 135%;
+          }
         }
       }
     }
@@ -588,7 +623,7 @@ section {
 
     .smile {
       color: #e0f30e;
-      font-size: 128px;
+      font-size: 160px;
       font-style: normal;
       font-weight: 100;
       line-height: 100%;
@@ -604,6 +639,10 @@ section {
     flex-direction: column;
     max-width: 960px;
     gap: var(--m6);
+
+    h2 {
+      padding-bottom: var(--m2);
+    }
 
     .actions {
       display: flex;
@@ -680,6 +719,7 @@ section {
 
     .share {
       display: grid;
+      gap: var(--m10);
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "share-title share-img"
@@ -690,7 +730,7 @@ section {
       }
       .share__action {
         grid-area: share-action;
-        margin-top: var(--m8);
+        margin-top: auto;
       }
       .share__img {
         grid-area: share-img;

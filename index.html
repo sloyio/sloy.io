@@ -3,8 +3,28 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Слой — агрегируй, визуализируй, создавай геопорталы." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sloy.io/" />
+  <meta property="og:title" content="Картографическая платформа Слой" />
+  <meta property="og:description" content="Агрегируй, визуализируй, создавай геопорталы." />
+  <meta property="og:image" content="/opengraph.jpg" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://sloy.io/" />
+  <meta property="twitter:title" content="Картографическая платформа Слой" />
+  <meta property="twitter:description" content="Агрегируй, визуализируй, создавай геопорталы." />
+  <meta property="twitter:image" content="/opengraph.jpg" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <link rel="stylesheet" href="./style.css" />
   <title>Слой</title>
 </head>
@@ -23,7 +43,7 @@
           <li><a class="button" href="#link_projects">Наши проекты</a></li>
           <li><a class="button" href="#link_price">Цены</a></li>
           <li>
-            <a href="#link_start" class="button variant_primary">Заказать проект</a>
+            <a href="#link_start" class="button variant_primary">Обсудить проект</a>
           </li>
         </ul>
       </nav>
@@ -33,10 +53,10 @@
         Слой — платформа для визуализации геоданных
       </h1>
       <p>
-        Помогает собирать и визуализировать данные на картах и создавать удобные геопорталы.
+        Визуализируйте данные на картах и создавайте удобные геопорталы
       </p>
 
-      <a href="#link_start" class="button size_xl variant_primary">Заказать проект</a>
+      <a href="#link_start" class="button size_xl variant_primary">Обсудить проект</a>
     </section>
 
     <section id="link_main_bg" class="section_main_bg">
@@ -68,15 +88,15 @@
       <div class="cards">
         <div class="card">
           <img loading="lazy" src="scenario1.png" class="card__image" />
-          <p>Для властей, жителей и туристов</p>
+          <h4>Для властей, жителей и туристов</h4>
         </div>
         <div class="card">
           <img loading="lazy" src="scenario2.png" class="card__image" />
-          <p>Для исследователей и аналитиков</p>
+          <h4>Для исследователей и аналитиков</h4>
         </div>
         <div class="card">
           <img loading="lazy" src="scenario3.png" class="card__image" />
-          <p>Для бизнеса и IT-компаний</p>
+          <h4>Для бизнеса и IT-компаний</h4>
         </div>
       </div>
     </section>
@@ -190,56 +210,61 @@
 
       <div class="projects">
         <div class="project">
-          <div class="project__info">
-            <h3 class="project__title">Геопортал Екатеринбурга</h3>
-            <div class="project__link">
-              <a class="link" href="sloy.io/ekaterinburg">sloy.io/ekaterinburg</a>
+          <div class="project__text">
+            <div class="project__info">
+              <h3 class="project__title">Геопортал Екатеринбурга</h3>
+              <div class="project__link">
+                <a class="link" href="sloy.io/ekaterinburg">sloy.io/ekaterinburg</a>
+              </div>
+              <p class="project__description">
+                Мы разработали геопортал Екатеринбурга, где собраны
+                и визуализированы различные данные о городе. С его помощью легко
+                узнать, когда был построен дом, какой этажности здания, сколько
+                объектов культурного наследия в городе, где чаще всего
+                происходят ДТП и многое другое.
+              </p>
             </div>
-            <p class="project__description">
-              Мы разработали геопортал Екатеринбурга, где собраны
-              и визуализированы различные данные о городе. С его помощью легко
-              узнать, когда был построен дом, какой этажности здания, сколько
-              объектов культурного наследия в городе, где чаще всего
-              происходят ДТП и многое другое.
-            </p>
           </div>
-
-          <img loading="lazy" src="/map_geoportal.png" />
+          <img class="project__image" loading="lazy" src="/map_geoportal.png" />
         </div>
 
         <div class="project">
-          <div class="project__info">
-            <h3 class="project__title">Геопортал Городца</h3>
-            <div class="project__link">
-              <a class="link" href="sloy.io/gorodets">sloy.io/gorodets</a>
+          <div class="project__text">
+            <div class="project__info">
+              <h3 class="project__title">Геопортал Городца</h3>
+              <div class="project__link">
+                <a class="link" href="sloy.io/gorodets">sloy.io/gorodets</a>
+              </div>
+              <p class="project__description">
+                Для исследовательской работы команда магистров из РАНХиГС
+                собрала большое количество данных по Городцу (Нижегородская
+                область), а мы упаковали их в доступный и удобный геопортал.
+              </p>
             </div>
-            <p class="project__description">
-              Для исследовательской работы команда магистров из РАНХиГС
-              собрала большое количество данных по Городцу (Нижегородская
-              область), а мы упаковали их в доступный и удобный геопортал.
-            </p>
           </div>
-
-          <img loading="lazy" src="/map_gorodets.png" />
+          <img class="project__image" loading="lazy" src="/map_gorodets.png" />
         </div>
 
         <div class="project">
-          <div class="project__info">
-            <h3 class="project__title">Геопортал Армении</h3>
-            <div class="project__link">
-              <a class="link" href="sloy.io/armenia">sloy.io/armenia</a>
+          <div class="project__text">
+            <div class="project__info">
+              <h3 class="project__title">Геопортал Армении</h3>
+              <div class="project__link">
+                <a class="link" href="sloy.io/armenia">sloy.io/armenia</a>
+              </div>
+
+              <p class="project__description">
+                Для конкурса <a href="https://contest.opendata.am/ru" target="_blank">Open Data Armenia</a> мы собрали
+                и визуализировали
+                геоданные о всей стране: объекты ЮНЕСКО, этажность зданий,
+                почтовые отделения, медицинские центры, типы землепользования
+                и много других полезных слоёв.
+              </p>
             </div>
-
-            <p class="project__description">
-              Для конкурса Open Data Armenia мы собрали и визуализировали
-              геоданные о всей стране: объекты ЮНЕСКО, этажность зданий,
-              почтовые отделения, медицинские центры, типы землепользования
-              и много других полезных слоёв.
-            </p>
           </div>
-
-          <img loading="lazy" src="/map_armenia.png" />
+          <img class="project__image" loading="lazy" src="/map_armenia.png" />
         </div>
+
       </div>
     </section>
 
@@ -250,16 +275,14 @@
       </div>
 
       <div class="smile">
-        (◠‿◠
-        <span class="smile__flower">✿</span>
-        )
+        (◠‿◠<span class="smile__flower">✿</span>)
       </div>
     </section>
 
     <div class="line"></div>
 
     <section id="link_start" class="section_start">
-      <h2>Заказать проект</h2>
+      <h2>Обсудить проект</h2>
       <p>Просто напишите нам на почту или в телеграм.</p>
       <div class="actions">
         <a href="mailto:main@sloy.io" class="button action action_email">
@@ -284,7 +307,7 @@
           </button>
         </div>
         <div class="share__img">
-          <img loading="lazy" src="/social.png" alt="Поделиться с друзьями" />
+          <img loading="lazy" src="/social.jpg" alt="Поделиться с друзьями" />
         </div>
       </div>
     </section>
@@ -294,18 +317,18 @@
       <nav>
         <ul>
           <li><a href="https://docs.sloy.io/">Документация</a></li>
-          <li><a href="https://anycraft.tech/">anycraft.tech</a></li>
+          <li><a href="https://anycraft.tech/">Сайт компании</a></li>
         </ul>
       </nav>
       <p>
-        ООО «ЭНИКРАФТ», ОГРН 1241600031298, ИНН 1683021950, КПП 168301001,
-        Юридический адрес: 420500, Республика Татарстан, м.р-н
-        Верхнеуслонский, г.п. Город Иннополис, г. Иннополис,
+        ООО «ЭНИКРАФТ», ОГРН 1241600031298, ИНН 1683021950, КПП 168301001, Юридический адрес: 420500, Республика
+        Татарстан, <nobr>м.р-н Верхнеуслонский,</nobr>
+        <nobr>г.п. Город</nobr> Иннополис, г. Иннополис,
         ул. Университетская, д. 5
       </p>
     </footer>
   </div>
-  <img loading="lazy" src="/bg2.png" />
+  <img loading="lazy" src="/bg2.jpg" />
 
   <script src="./index.js" type="module"></script>
 </body>
