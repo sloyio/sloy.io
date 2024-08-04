@@ -379,11 +379,11 @@ section {
   }
 
   &.section_example_ekb {
-    padding: 0;
     max-width: initial;
     max-height: 90vh;
-    margin-top: calc(-1.75 * var(--m30));
-    padding-bottom: var(--m20);
+    margin-top: -10vw;
+    margin-bottom: 10vw;
+    padding: 0;
     position: relative;
     z-index: 1;
   }
@@ -392,7 +392,6 @@ section {
     max-width: initial;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     font-size: 13vw;
-    /* font-size: clamp(36px, 13vw, 186px); */
     font-weight: 700;
     line-height: 90%;
     background: linear-gradient(180deg, #fff 0%, rgba(243, 194, 255, 0.9) 100%);
@@ -400,12 +399,12 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: left;
-    padding: var(--m40) var(--m20) var(--m8);
+    padding: 0 5vw 2vw;
   }
 
   &.section_visualisaitons {
     max-width: initial;
-    padding: var(--m20) var(--m5) var(--m5);
+    padding: var(--m10) var(--m5) var(--m5);
 
     .cards {
       gap: var(--m4);
