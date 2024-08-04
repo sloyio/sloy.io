@@ -864,6 +864,57 @@ section {
     --var-base: 3px;
   }
 
+  .menu {
+    width: 90%;
+    top: auto;
+    bottom: var(--m4);
+    padding: var(--m4) var(--m4) var(--m4) var(--m6);
+    ul {
+      width: 100%;
+      justify-content: space-between;
+      li:not(:first-child):not(:last-child) {
+        display: none;
+      }
+    }
+    .button {
+      font-size: var(--t-m);
+      padding: var(--m4) var(--m6);
+    }
+  }
+
+  section {
+    padding: var(--m20) var(--m5);
+    .cards {
+      .card {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  section.section_main {
+    align-items: start;
+    text-align: left;
+    padding-top: var(--m10);
+  }
+
+  section.section_visualisaitons {
+    .cards {
+      gap: var(--m2);
+    }
+  }
+
+  section.section_users {
+    .cards {
+      gap: var(--m4);
+      .card {
+        padding: var(--m6);
+        h4 {
+          font-size: var(--t-m);
+        }
+      }
+    }
+  }
+
   section.section_price,
   .project__info,
   .actions {
