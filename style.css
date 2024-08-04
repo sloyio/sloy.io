@@ -516,19 +516,64 @@ section {
       grid-template-areas:
         "usecase1 usecase1"
         "usecase2 usecase3"
-        "usecase2 usecase4";
+        "usecase4 usecase5";
 
       .card:nth-child(1) {
         grid-area: usecase1;
+        display: grid;
+        gap: var(--m2);
+        grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
+        grid-template-areas: "card-text card-image";
+        padding: var(--m8) 0 0 var(--m16);
+        .card__text {
+          margin-top: var(--m8);
+        }
       }
       .card:nth-child(2) {
         grid-area: usecase2;
+        gap: 0;
+        padding: var(--m16) 0 0;
+        .card__text {
+          margin: 0 var(--m16);
+        }
       }
       .card:nth-child(3) {
         grid-area: usecase3;
+        gap: 0;
+        padding: var(--m16) 0 0;
+        justify-content: space-between;
+        .card__text {
+          margin: 0 var(--m16);
+        }
       }
       .card:nth-child(4) {
         grid-area: usecase4;
+        gap: var(--m10);
+        padding: var(--m16) var(--m16) 0;
+      }
+      .card:nth-child(5) {
+        grid-area: usecase5;
+        gap: var(--m10);
+        padding: var(--m16) var(--m16) 0;
+      }
+
+      .card {
+        overflow: hidden;
+        .card__text {
+          grid-area: card-text;
+          display: flex;
+          flex-direction: column;
+          gap: var(--m6);
+        }
+        .card__title {
+          grid-area: card-title;
+        }
+        .card__description {
+          grid-area: card-description;
+        }
+        .card__image {
+          grid-area: card-image;
+        }
       }
     }
   }
