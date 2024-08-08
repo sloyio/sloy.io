@@ -488,6 +488,8 @@ section {
 
     .card__image {
       margin-top: calc(-1 * var(--m20));
+      max-width: 100%;
+      width: auto;
     }
 
     .card__title {
@@ -543,6 +545,7 @@ section {
         grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
         grid-template-areas: "card-text card-image";
         padding: var(--m8) 0 0 var(--m16);
+
         .card__text {
           margin-top: var(--m8);
         }
@@ -551,6 +554,7 @@ section {
         grid-area: usecase2;
         gap: 0;
         padding: var(--m16) 0 0;
+
         .card__text {
           margin: 0 var(--m16);
         }
@@ -560,19 +564,25 @@ section {
         gap: 0;
         padding: var(--m16) 0 0;
         justify-content: space-between;
+
         .card__text {
           margin: 0 var(--m16);
         }
       }
       .card:nth-child(4) {
         grid-area: usecase4;
-        gap: var(--m10);
-        padding: var(--m16) var(--m16) 0;
       }
       .card:nth-child(5) {
         grid-area: usecase5;
+      }
+      .card:nth-child(n + 4):nth-child(-n + 5) {
         gap: var(--m10);
         padding: var(--m16) var(--m16) 0;
+
+        .card__image {
+          max-width: 100%;
+          width: auto;
+        }
       }
 
       .card {
@@ -995,6 +1005,10 @@ section {
           gap: var(--m3);
           margin: 0 var(--m6);
         }
+
+        .card__image {
+          height: 100%;
+        }
       }
     }
   }
@@ -1029,7 +1043,7 @@ section {
 
   section.section_price {
     .smile {
-      font-size: 30vw;
+      font-size: 28vw;
       margin: var(--m10) 0 var(--m20);
     }
   }
